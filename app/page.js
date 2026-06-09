@@ -73,10 +73,10 @@ function LinkedInIcon() {
   );
 }
 
-function XIcon() {
+function FacebookIcon() {
   return (
-    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
     </svg>
   );
 }
@@ -108,16 +108,6 @@ function CountdownBox({ value, label }) {
 
 export default function ComingSoon() {
   const timeLeft = useCountdown();
-  const [email, setEmail] = useState('');
-  const [status, setStatus] = useState('idle');
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    if (!email.includes('@')) return;
-    setStatus('success');
-    setEmail('');
-    setTimeout(() => setStatus('idle'), 5000);
-  }
 
   return (
     <>
@@ -251,47 +241,6 @@ export default function ComingSoon() {
           animation: fadeUp 0.5s 0.21s ease both;
         }
         .stat-num { font-weight: 700; color: #0f172a; }
-
-        .form-wrap {
-          width: 100%; max-width: 450px;
-          animation: fadeUp 0.5s 0.27s ease both;
-        }
-        .form-row {
-          display: flex;
-          border: 1.5px solid #e2e8f0; border-radius: 14px;
-          overflow: hidden; background: #fff;
-          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
-          transition: border-color 0.2s, box-shadow 0.2s;
-        }
-        .form-row:focus-within {
-          border-color: #818cf8;
-          box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
-        }
-        .form-input {
-          flex: 1; padding: 13px 16px;
-          border: none; outline: none;
-          font-family: inherit; font-size: 14px; color: #0f172a;
-          background: transparent; min-width: 0;
-        }
-        .form-input::placeholder { color: #9ca3af; }
-        .form-btn {
-          margin: 5px; padding: 0 20px;
-          background: #4f46e5; border: none; border-radius: 10px;
-          font-family: inherit; font-size: 13px; font-weight: 600; color: #fff;
-          cursor: pointer; white-space: nowrap;
-          transition: background 0.18s, transform 0.12s;
-        }
-        .form-btn:hover { background: #4338ca; transform: scale(1.02); }
-        .form-btn:active { transform: scale(0.98); }
-        .form-note {
-          text-align: center; font-size: 12px; color: #94a3b8;
-          margin-top: 0.5rem;
-          animation: fadeUp 0.5s 0.31s ease both;
-        }
-        .form-success {
-          text-align: center; font-size: 13px; font-weight: 500; color: #059669;
-          margin-top: 0.5rem;
-        }
 
         .or-divider {
           display: flex; align-items: center; gap: 12px;
@@ -495,14 +444,14 @@ export default function ComingSoon() {
             <span className="nav-name">rehbar<em>.io</em></span>
           </a>
           <div className="nav-socials">
-            <a className="nav-social" href="https://instagram.com/rehbar.io" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <a className="nav-social" href="https://www.instagram.com/rehbar.io?igsh=MWRsN2RvdWkxaHNlbA==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <IgIcon />
             </a>
-            <a className="nav-social" href="https://linkedin.com/company/rehbario" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <LinkedInIcon />
+            <a className="nav-social" href="https://www.facebook.com/share/1NhqcRSXQk/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <FacebookIcon />
             </a>
-            <a className="nav-social" href="https://twitter.com/rehbario" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter">
-              <XIcon />
+            <a className="nav-social" href="https://www.linkedin.com/company/rehbar-io/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <LinkedInIcon />
             </a>
           </div>
         </nav>
@@ -533,28 +482,6 @@ export default function ComingSoon() {
               <span className="stat-num">500,000+</span>
               students take Pakistan&apos;s engineering entry tests every year
             </div>
-
-            <div className="form-wrap">
-              <form onSubmit={handleSubmit}>
-                <div className="form-row">
-                  <input
-                    className="form-input"
-                    type="email"
-                    placeholder="Enter your email for early access"
-                    value={email}
-                    onChange={e => setEmail(e.target.value)}
-                    required
-                  />
-                  <button className="form-btn" type="submit">
-                    Notify Me
-                  </button>
-                </div>
-              </form>
-              {status === 'success' && (
-                <p className="form-success">You&apos;re on the early access list!</p>
-              )}
-            </div>
-            <p className="form-note">No spam. One email when we launch.</p>
 
             <div className="or-divider">Available on</div>
 
@@ -630,12 +557,12 @@ export default function ComingSoon() {
         <footer className="footer">
           <p className="footer-copy">
             © 2026 Rehbar &nbsp;·&nbsp;{' '}
-            <a href="mailto:hello@rehbar.io">hello@rehbar.io</a>
+            <a href="mailto:rehbar.official.io@gmail.com">rehbar.official.io@gmail.com</a>
           </p>
           <div className="footer-links">
-            <a className="footer-link" href="https://instagram.com/rehbar.io" target="_blank" rel="noopener noreferrer">Instagram</a>
-            <a className="footer-link" href="https://linkedin.com/company/rehbario" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a className="footer-link" href="https://twitter.com/rehbario" target="_blank" rel="noopener noreferrer">Twitter</a>
+            <a className="footer-link" href="https://www.instagram.com/rehbar.io?igsh=MWRsN2RvdWkxaHNlbA==" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a className="footer-link" href="https://www.facebook.com/share/1NhqcRSXQk/" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a className="footer-link" href="https://www.linkedin.com/company/rehbar-io/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           </div>
         </footer>
       </div>
